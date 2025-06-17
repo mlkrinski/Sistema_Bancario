@@ -20,8 +20,12 @@ while True:
 
   if opcao == "d":
     print("Depósito")
-    valor = float(input("Informe o valor do depósito: "))
-
+    try:
+      valor = float(input("Informe o valor do depósito: "))
+    except ValueError:
+      print("Valor inválido! Informe um número válido.")
+      continue # Verificação para não quebrar o código
+    
     if valor > 0:
       saldo += valor
       extrato += f"Depósito: R$ {valor:.2f}\n"
@@ -31,7 +35,11 @@ while True:
 
   elif opcao == "s":
     print("Saque")
-    valor = float(input("Informe o valor do saque: "))
+    try:
+      valor = float(input("Informe o valor do saque: "))
+    except ValueError:
+      print("Valor inválido! Informe um número válido.")
+      continue 
 
     if valor > saldo:
       print("Operação falhou! Você não tem saldo suficiente.")
