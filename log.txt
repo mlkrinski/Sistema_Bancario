@@ -1,0 +1,8 @@
+17-07-2025 19:42:11 | Função criar_cliente | Executada com argumentos args=["[<PessoaFisica: ('marcelo', 'cpf=01')>]"], kwargs={} | Retornou None
+17-07-2025 19:42:21 | Função criar_cliente | Executada com argumentos args=["[<PessoaFisica: ('marcelo', 'cpf=01')>, <PessoaFisica: ('luis', 'cpf=02')>]"], kwargs={} | Retornou None
+17-07-2025 19:42:27 | Função criar_conta | Executada com argumentos args=['1', "[<PessoaFisica: ('marcelo', 'cpf=01')>, <PessoaFisica: ('luis', 'cpf=02')>]", '[<__main__.ContaCorrente object at 0x000001A3E6DDBCB0>]'], kwargs={} | Retornou None
+17-07-2025 19:42:28 | Função criar_conta | Executada com argumentos args=['2', "[<PessoaFisica: ('marcelo', 'cpf=01')>, <PessoaFisica: ('luis', 'cpf=02')>]", '[<__main__.ContaCorrente object at 0x000001A3E6DDBCB0>, <__main__.ContaCorrente object at 0x000001A3E71B8F50>]'], kwargs={} | Retornou None
+17-07-2025 19:42:37 | Função depositar | Executada com argumentos args=["[<PessoaFisica: ('marcelo', 'cpf=01')>, <PessoaFisica: ('luis', 'cpf=02')>]"], kwargs={} | Retornou None
+17-07-2025 19:42:40 | Função depositar | Executada com argumentos args=["[<PessoaFisica: ('marcelo', 'cpf=01')>, <PessoaFisica: ('luis', 'cpf=02')>]"], kwargs={} | Retornou None
+17-07-2025 19:42:42 | Função sacar | Executada com argumentos args=["[<PessoaFisica: ('marcelo', 'cpf=01')>, <PessoaFisica: ('luis', 'cpf=02')>]"], kwargs={} | Retornou None
+17-07-2025 19:42:44 | Função exibir_extrato | Executada com argumentos args=["[<PessoaFisica: ('marcelo', 'cpf=01')>, <PessoaFisica: ('luis', 'cpf=02')>]"], kwargs={} | Retornou None

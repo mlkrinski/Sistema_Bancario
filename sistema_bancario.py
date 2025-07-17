@@ -1,6 +1,9 @@
 import textwrap
 from abc import ABC, abstractmethod
 from datetime import datetime
+from pathlib import Path
+
+ROOTH_PATH = Path(__file__).parent
 
 
 class ContasIterador:
@@ -50,6 +53,9 @@ class PessoaFisica(Cliente):
         self.nome = nome
         self.data_nascimento = data_nascimento
         self.cpf = cpf
+
+    def __repr__(self):
+        return f"<{self.__class__.__name__}: ('{self.nome}', 'cpf={self.cpf}')>"
 
 
 class Conta:
@@ -224,7 +230,23 @@ class Deposito(Transacao):
 def log_transacao(func):
     def envelope(*args, **kwargs):
         resultado = func(*args, **kwargs)
-        print(f"{datetime.now()}: {func.__name__.upper()}")
+
+        # Montar os dados do log
+        data_hora = datetime.now().strftime("%d-%m-%Y %H:%M:%S")
+        nome_funcao = func.__name__
+        argumentos = f"args={[str(a) for a in args]}, kwargs={kwargs}"
+        retorno = f"{resultado}"
+
+        log_str = f"{data_hora} | Função {nome_funcao} | Executada com argumentos {argumentos} | Retornou {retorno}\n"
+
+        # define o caminho do arquivo
+        caminho_log = ROOTH_PATH / "log.txt"
+
+        # escreve no arquivo em modo append
+        with open(caminho_log, "a", encoding="utf-8") as f:
+            f.write(log_str)
+        
+        
         return resultado
 
     return envelope
